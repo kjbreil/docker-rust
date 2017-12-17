@@ -1,14 +1,5 @@
 #!/bin/bash
 
-if [ "$1" != "" ]; then
-  if ["$1" == "start" ]; then
-    install
-    start
-  fi
-else
-  install
-fi
-
 # Install is actuall install or update
 function install() {
   if [ "$RUST_UPDATE" == "1" ]; then
@@ -21,7 +12,7 @@ function install() {
       ./rustserver force-update
   fi
 
-  if [ !-d ./serverfiles ]; then
+  if [ ! -d ./serverfiles ]; then
     ./rustserver update-lgsm
     ./rustserver auto-install
   fi
@@ -29,7 +20,7 @@ function install() {
 
 
 function start() {
-  if [ !-d ./serverfiles ]; then
+  if [ ! -d ./serverfiles ]; then
     install
   else
      # trap exit signals
@@ -59,3 +50,11 @@ function running() {
   done
 }
 
+if [ "$1" != "" ]; then
+  if ["$1" == "start" ]; then
+    install
+    start
+  fi
+else
+  install
+fi
