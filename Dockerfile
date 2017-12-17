@@ -15,5 +15,4 @@ COPY entrypoint.sh entrypoint.sh
 VOLUME ["/home/server/log", "/home/server/lgsm/config-lgsm"]
 # , "/home/server/serverfiles/server/rustserver/"]
 
-ENTRYPOINT [ "/bin/bash" ]
-CMD ["entrypoint.sh"]
+CMD ["bash", "entrypoint.sh"]
