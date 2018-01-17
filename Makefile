@@ -2,7 +2,7 @@ NS = kjbreil
 
 REPO = rust-server
 
-.PHONY: build no-cache
+.PHONY: 
 
 default: build
 
@@ -21,5 +21,3 @@ run:
 push:
 	docker push $(NS)/$(REPO)
 
-clean-system:
-	docker system prune -a

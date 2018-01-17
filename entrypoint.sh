@@ -58,7 +58,7 @@ function running() {
 }
 
 if [ "$1" != "" ]; then
-  if ["$1" == "start" ]; then
+  if [ "$1" == "start" ]; then
     start
   fi
 else
