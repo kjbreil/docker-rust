@@ -2,15 +2,15 @@ NS = kjbreil
 
 REPO = rust-server
 
-.PHONY: build no-cache
+.PHONY: 
 
 default: build
 
 build:
 	docker build -t $(NS)/$(REPO) .
 
-no-cache:
-	docker build -t $(NS)/$(REPO) .
+clean:
+	docker build --no-cache -t $(NS)/$(REPO) .
 
 shell:
 	docker run --rm --name lgsm-test -it $(NS)/$(REPO) /bin/bash
@@ -21,5 +21,3 @@ run:
 push:
 	docker push $(NS)/$(REPO)
 
-clean:
-	docker system prune -a
