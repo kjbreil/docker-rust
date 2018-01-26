@@ -67,6 +67,8 @@ RUN bash linuxgsm.sh rustserver && \
 
 EXPOSE 28015/tcp 28015/udp 28016/tcp 28016/udp
 
+COPY entrypoint.sh entrypoint.sh
+
 VOLUME ["/home/server/log", "/home/server/serverfiles/server/rustserver/"]
 
 ENTRYPOINT ["bash", "entrypoint.sh"]
