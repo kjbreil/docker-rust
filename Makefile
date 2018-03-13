@@ -4,7 +4,7 @@ REPO = rust-server
 
 .PHONY: 
 
-default: build
+default: build push
 
 build:
 	docker build -t $(NS)/$(REPO) .
