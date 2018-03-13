@@ -1,6 +1,6 @@
 NS = kjbreil
 
-REPO = rust-server
+REPO = rust-server:TESTING
 
 .PHONY: 
 
