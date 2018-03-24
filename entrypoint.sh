@@ -104,7 +104,7 @@ function running() {
 
   # if something fails while attaching to the tmux session then just wait
   while : ; do
-    update
+    # update
     sleep 3600
   done
 }
